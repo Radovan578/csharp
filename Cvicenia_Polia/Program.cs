@@ -36,8 +36,9 @@ namespace Cvicenia_Polia
             Console.WriteLine(sum);
             */
 
-            
+
             //cyklus pomocou ktoreho naplnime pole cisiel, cez Console.Readline
+            /*
             Console.WriteLine("Kolko cisiel chcete zadat?:");
             int r = int.Parse(Console.ReadLine());
             int[] numbers = new int[r];
@@ -54,8 +55,33 @@ namespace Cvicenia_Polia
                 sum += numbers[i];
             }
             Console.Write(" = " + sum);
+            */
 
+            /*
+            int[] numbers = new int[10];
 
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] = i * 10;
+            }
+
+            int[] numbersNew = new int[11];
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbersNew[i] = numbers[i];
+            }
+            numbersNew[10] = 10000;
+            foreach (int number in numbersNew)
+            {
+                Console.WriteLine(number);
+            }
+
+            string[] names = { "Janko", "Fero", "Misko", "Jozef" };
+            foreach (string name in names)
+            {
+                Console.WriteLine(name);
+            }
+            */
 
 
 
