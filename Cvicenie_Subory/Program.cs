@@ -18,11 +18,14 @@ namespace Cvicenie_Subory
             /*
             MinMoneyCount(text);
             */
-            /*
-            List<string> mojZoznam = PeopleUnder05M(text);
-            */
 
-            PeopleUnder05M(text);
+            List<string> mojZoznam = PeopleUnder05M(text);
+            foreach (string human in mojZoznam)
+            {
+                Console.WriteLine(human);
+            }
+
+
         }
         /*
         public static List<string> PeopleUnder05M(string[] text)
@@ -88,26 +91,24 @@ namespace Cvicenie_Subory
             }
             Console.WriteLine(minValuePerson);
         }
-        public static void PeopleUnder05M(string[] text)
+        public static List<string> PeopleUnder05M(string[] text)
         {
+            List<string> People05M = new List<string>();
 
-            int minValue = 500000;
-            string PeopleUnder = "";
             foreach (string line in text.Skip(1))
             {
                 string[] splits = line.Split(";");
 
                 int accountValue = int.Parse(splits[4]);
 
-                if (accountValue < minValue)
+                if (accountValue < 500000)
                 {
-                    minValue = accountValue;
-                    PeopleUnder = splits[0] + " " + splits[1];
-                    Console.WriteLine(PeopleUnder);
+                    People05M.Add(splits[1]);
                 }
             }
-            
 
+           return People05M;
+         
 
         }
 
