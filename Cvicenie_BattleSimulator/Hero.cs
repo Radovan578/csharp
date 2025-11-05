@@ -29,7 +29,21 @@ namespace Cvicenie_BattleSimulator
                 return false;
             }
         }
-        
+        public bool HeroAttack2(Monster2 monster2)
+        {
+            if (ENG - 20 >= 0)
+            {
+                ENG = ENG - 20;         //za jeden utok sa odcita 20 energy
+                monster2.HP2 = monster2.HP2 - DMG;  //zrani monstrum
+                return true;
+            }
+            else
+            {
+                ENG = ENG + 50;  //ak nema dost energy, tak si ju trochu obnovi
+                return false;
+            }
+        }
+
 
 
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cvicenie_BattleSimulator
 {
-    public class Monster
+    public class Monster 
     {
         public string RaceType { get; set; }   //Monster race type (e.g., Goblin, Orc, Troll)
         public int HP { get; set; }    //Health points
