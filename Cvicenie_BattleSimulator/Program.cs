@@ -12,7 +12,7 @@ namespace Cvicenie_BattleSimulator
 
             Console.WriteLine("Kto chces aby bojoval s hrdinom? 1. 'Goblin' 2. 'Troll' ");
             string MonsterName = Console.ReadLine();
-
+            
             if (MonsterName == "Goblin")
             {
                 while (true)
@@ -25,7 +25,7 @@ namespace Cvicenie_BattleSimulator
                     bool wasAttack = ourHero.HeroAttack(monster1);
                     if (wasAttack)
                     {
-                        Console.WriteLine("MONSTER:HP " + monster1.HP);
+                        Console.WriteLine(MonsterName + ":HP" + monster1.HP);
                     }
                     else
                     {
@@ -41,7 +41,7 @@ namespace Cvicenie_BattleSimulator
 
                     if (monster1.HP <= 0)
                     {
-                        Console.WriteLine("Monster is dead!");
+                        Console.WriteLine(MonsterName + " is dead!");
                         break;
                     }
 
@@ -60,7 +60,7 @@ namespace Cvicenie_BattleSimulator
                     bool wasAttack2 = ourHero.HeroAttack2(monster2);
                     if (wasAttack2)
                     {
-                        Console.WriteLine("MONSTER:HP " + monster2.HP2);
+                        Console.WriteLine(MonsterName + ":HP" + monster2.HP2);
                     }
                     else
                     {
@@ -76,7 +76,7 @@ namespace Cvicenie_BattleSimulator
 
                     if (monster2.HP2 <= 0)
                     {
-                        Console.WriteLine("Monster is dead!");
+                        Console.WriteLine(MonsterName + " is dead!");
                         break;
                     }
 
