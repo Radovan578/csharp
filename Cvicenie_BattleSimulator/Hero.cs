@@ -9,8 +9,8 @@ namespace Cvicenie_BattleSimulator
     public class Hero
     {
         public string Name { get; set; } = "Arnost";  //Hero name
-        public int HP { get; set; } = 100;    //Health points
-        public int DMG { get; set; } = 10;   //Damage
+        public int HP { get; set; } = 300;    //Health points
+        public int DMG { get; set; } = 20;   //Damage
         public int ENG { get; set; } = 100;       //Energy
         public int SHD { get; set; } = 15;         //Shield
 
