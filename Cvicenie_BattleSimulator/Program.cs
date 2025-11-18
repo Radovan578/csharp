@@ -7,9 +7,9 @@ namespace Cvicenie_BattleSimulator
         static void Main(string[] args)
         {
             Hero ourHero = new Hero();
-            Monster monster1 = new Monster("Goblin", 150, 20);
-            Monster2 monster2 = new Monster2("Troll", 125, 13);
-            Monster monster3 = new Monster("Orc", 120, 25);
+            Monster monster1 = new Monster("Goblin", 200);
+            Monster2 monster2 = new Monster2("Troll", 125);
+            Monster monster3 = new Monster("Orc", 150);
             List<Monster> monsters = new List<Monster>();
             monsters.Add(monster1);
             monsters.Add(monster3);
