@@ -8,7 +8,7 @@ namespace Cvicenie_CookieClicker
 {
     public class Player
     {
-        public int Cookies { get; set; } = 10;
+        public int Cookies { get; set; } = 100;
         public int Day { get; set; } = 0;
         public ConsoleKeyInfo PressedKey { get; set; }
 

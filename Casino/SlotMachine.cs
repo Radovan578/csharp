@@ -19,5 +19,12 @@ namespace Casino
             this.Sign2 = sign2;
             this.Sign3 = sign3;
         }
+
+        public void SlotMachineGame(Player player)
+        {
+
+        }
+
+
     }
 }
