@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using Microsoft.VisualBasic;
 
 namespace Casino
 {
@@ -16,82 +13,93 @@ namespace Casino
         public string Orol { get; set; } = "Orol";
 
 
-        public void HodMincouGame(Player player)
+        public void HodMincouGame(Player player)                                       //hrac vybera stavku
         {
-            Console.WriteLine("Kolko chces stavit?");                  //Vyber stavky
-            string stavkaTxt = Console.ReadLine();
-            int stavka = int.Parse(stavkaTxt);
-            if (stavka > player.Kredit)
+            while (true)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Nemas dostatok kreditov na hranie!");
-                Console.ResetColor();
-                return;
-            }
-            else if (stavka <= player.Kredit)
-            {
-                List<string> symbols = new List<string>();                          //Nahodne vybratie znaku
-                symbols.Add(Hlava);
-                symbols.Add(Orol);
-                Random r = new Random();
-                int index = r.Next(symbols.Count);
-                string symbol = symbols[index];
 
-                Console.WriteLine("Vyber si znak: 1.Hlava 2.Orol ");                //Uzivatel si vybera znak
-                string SymbolPick = Console.ReadLine();
-                if (SymbolPick == "1")
+                Console.WriteLine("Pre menu napis 'm', Pre stavku stlac 'enter' ");
+                string command = Console.ReadLine();
+                Console.WriteLine("Kolko chces stavit?");
+                string stavkaTxt = Console.ReadLine();
+                int stavka = int.Parse(stavkaTxt);
+                if (command == "m")
                 {
-                    SymbolPick = Hlava;
+                    break;
+                }
+                if (stavka > player.Kredit)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Nemas dostatok kreditov na hranie!");
+                    Console.ResetColor();
+                    return;
+                }
+                else
+                {
+                    List<string> symbols = new List<string>();                          //nahodne vybratie znaku
+                    symbols.Add(Hlava);
+                    symbols.Add(Orol);
+                    Random r = new Random();
+                    int index = r.Next(symbols.Count);
+                    string symbol = symbols[index];
 
-                    if (SymbolPick == symbol)                                            //Porovnavanie znakov, vyhra/prehra
+                    Console.WriteLine("Vyber si znak: 1.Hlava 2.Orol ");
+                    string SymbolPick = Console.ReadLine();
+                    if (SymbolPick == "1")
                     {
-                        int vyhra = stavka * 2;
-                        player.Kredit += vyhra;
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("Vyhral si!");
-                        Console.WriteLine("Dostavas: " + vyhra + "kreditov");
-                        Console.ResetColor();
+                        SymbolPick = Hlava;                                    //porovnanie znakov
+                        if (SymbolPick == symbol)
+                        {
+                            int vyhra = stavka * 2;
+                            player.Kredit += vyhra;
+                            Console.ForegroundColor = ConsoleColor.Green;
+
+                            Console.WriteLine("Vyhral si!");
+                            Console.WriteLine("Dostavas: " + vyhra + " kreditov");
+                            Console.ResetColor();
+
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+
+                            player.Kredit -= stavka;
+                            Console.WriteLine("Prehral si " + stavka);
+                            Console.ResetColor();
+
+                        }
                     }
-                    else
+                    else if (SymbolPick == "2")
                     {
-                        player.Kredit -= stavka;
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Prehral si. " + stavka);
-                        Console.ResetColor();
+                        SymbolPick = Orol;
+                        if (SymbolPick == symbol)
+                        {
+                            int vyhra = stavka * 2;
+                            player.Kredit += vyhra;
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Vyhral si!");
+                            Console.WriteLine("Dostavas: " + vyhra + " kreditov");
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+
+                            player.Kredit -= stavka;
+                            Console.WriteLine("Prehral si " + stavka);
+                            Console.ResetColor();
+
+                        }
+
+
                     }
+
+
+
 
                 }
-                else if (SymbolPick == "2")
-                {
-                    SymbolPick = Orol;
-
-                    if (SymbolPick == symbol)
-                    {
-                        int vyhra = stavka * 2;
-                        player.Kredit += vyhra;
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("Vyhral si!");
-                        Console.WriteLine("Dostavas: " + vyhra + "kreditov");
-                        Console.ResetColor();
-                    }
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        player.Kredit -= stavka;
-                        Console.WriteLine("Prehral si. " + stavka);
-                        Console.ResetColor();
-                    }
-
-
-                }
-
-
-
-
-
             }
+            
         }
-
-
     }
 }

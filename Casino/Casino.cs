@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Channels;
@@ -15,11 +13,34 @@ namespace Casino
 
         public void StartCasino()
         {
-            Console.WriteLine("Zadaj svoje Meno");
-            string name = Console.ReadLine();                                           //Registracia
-            Console.WriteLine("Vitaj " + name + " zadaj svoj vek");
+            LogoCasino logoCSN = new LogoCasino();
+            logoCSN.StartUI();
+            //Thread.Sleep(500);
+            Console.Clear();
+
+
+
+            Console.WriteLine(@" ====================================
+ |        CASINO ADMIRAL LOGIN       |
+ ====================================
+ |                                  |
+ |   Zadaj meno:                    |
+ |                                  |
+ |   Zadaj vek :                    |
+ |                                  |
+ |        [   P O K R A Č O V A Ť   ] |
+ ====================================");
+            Console.SetCursorPosition(18, 4);
+            string name = Console.ReadLine();
+
+            Console.SetCursorPosition(18, 6);
             string ageTxt = Console.ReadLine();
             int age = int.Parse(ageTxt);
+            Console.Clear();
+            Console.WriteLine("LOADING.......");
+            Thread.Sleep(500);
+
+
             if (age < 18)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -32,129 +53,100 @@ namespace Casino
                 Console.WriteLine("Pravdepodobne uz nezijes");
                 return;
             }
+            else if (age == 67)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Deleting C:\\Users\\System32..........");
+                Console.ResetColor();
+                return;
+            }
             else
             {
-                Player MyPlayer = new Player(20, name, age, 0);
+                Console.Clear();
+                Player MyPlayer = new Player(10, name, age, 0, 0);
 
                 while (true)
                 {
                     HodMincou hodMincou = new HodMincou();
-
+                    SlotMachine slotMachine = new SlotMachine();
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.WriteLine(@" __          __  _                            _           _____          _             
-\ \        / / | |                          | |         / ____|        (_)            
- \ \  /\  / /__| | ___ ___  _ __ ___   ___  | |_ ___   | |     __ _ ___ _ _ __   ___  
-  \ \/  \/ / _ \ |/ __/ _ \| '_ ` _ \ / _ \ | __/ _ \  | |    / _` / __| | '_ \ / _ \ 
-   \  /\  /  __/ | (_| (_) | | | | | |  __/ | || (_) | | |___| (_| \__ \ | | | | (_) |
-    \/  \/ \___|_|\___\___/|_| |_| |_|\___|  \__\___/   \_____\__,_|___/_|_| |_|\___/ 
-                                                                                      
-                                                                                      "); Console.ResetColor();
+ \ \        / / | |                          | |         / ____|        (_)            
+  \ \  /\  / /__| | ___ ___  _ __ ___   ___  | |_ ___   | |     __ _ ___ _ _ __   ___  
+   \ \/  \/ / _ \ |/ __/ _ \| '_ ` _ \ / _ \ | __/ _ \  | |    / _` / __| | '_ \ / _ \ 
+    \  /\  /  __/ | (_| (_) | | | | | |  __/ | || (_) | | |___| (_| \__ \ | | | | (_) |
+     \/  \/ \___|_|\___\___/|_| |_| |_|\___|  \__\___/   \_____\__,_|___/_|_| |_|\___/ 
+                                                                                       
+                                                                                       ");
+                    Console.ResetColor();
                     Console.WriteLine(" ");
-                    Console.WriteLine("Cislom vyber akciu: ");
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("1.Slot Machine");
                     Console.ResetColor();
-                    Console.WriteLine(" ");
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("2.Hod Mincou");
+                    Console.WriteLine(" 2. Hod Mincou");
                     Console.ResetColor();
-                    Console.WriteLine(" ");                                             //Menu
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("9. Ukončiť hru");
                     Console.ResetColor();
-                    Console.WriteLine(" ");
-                    Console.WriteLine(" ");
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Tvoj KREDIT: " + MyPlayer.Kredit);
+                    Console.WriteLine("Tvoje kredit: " + MyPlayer.Kredit);
                     Console.ResetColor();
-
                     string commandTxt = Console.ReadLine();
                     int command = int.Parse(commandTxt);
-                     
-                    if (command == 1)                                         //Vyber hier
-                    { 
 
-                    }
-                    if (command == 2)
+                    switch (command)
                     {
-                        Console.Clear();
-                        hodMincou.HodMincouGame(MyPlayer);
+                        case 1:
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine(@"   _____ _       _     __  __            _     _             
+  / ____| |     | |    |  \/  |          | |   (_)            
+ | (___ | | ___ | |_   | \  / | __ _  ___| |__  _ _ __   ___  
+  \___ \| |/ _ \| __|  | |\/| |/ _` |/ __| '_ \| | '_ \ / _ \ 
+  ____) | | (_) | |_   | |  | | (_| | (__| | | | | | | |  __/ 
+ |_____/|_|\___/ \__|  |_|  |_|\__,_|\___|_| |_|_|_| |_|\___| 
+                                                             
+                                                             ");
+                            slotMachine.SlotMachineGame(MyPlayer);
+                            Console.ResetColor();
+                            break;
+                        case 2:
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine(@"  _    _           _   __  __ _                       
+ | |  | |         | |  |  \/  (_)                      
+ | |__| | ___   __| |  | \  / |_ _ __   ___ ___  _   _ 
+ |  __  |/ _ \ / _` |  | |\/| | | '_ \ / __/ _ \| | | |
+ | |  | | (_) | (_| |  | |  | | | | | | (_| (_) | |_| |
+ |_|  |_|\___/ \__,_|  |_|  |_|_|_| |_|\___\___/ \__,_|
+                                                      
+                                                      ");
+                            Console.ResetColor();
+                            hodMincou.HodMincouGame(MyPlayer);
+                            break;
+                        case 9:
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine(@"  _____             _     _            _               _     _ _                                          _               _                
+ |  __ \           (_)   | |          (_)             (_)   | (_)                                        | |             | |               
+ | |  | | _____   ___  __| | ___ _ __  _  __ _  __   ___  __| |_ _ __ ___   ___   ___  __ _   _ __   __ _| |__  _   _  __| |_   _  ___ ___ 
+ | |  | |/ _ \ \ / / |/ _` |/ _ \ '_ \| |/ _` | \ \ / / |/ _` | | '_ ` _ \ / _ \ / __|/ _` | | '_ \ / _` | '_ \| | | |/ _` | | | |/ __/ _ \
+ | |__| | (_) \ V /| | (_| |  __/ | | | | (_| |  \ V /| | (_| | | | | | | |  __/ \__ \ (_| | | | | | (_| | |_) | |_| | (_| | |_| | (_|  __/
+ |_____/ \___/ \_/ |_|\__,_|\___|_| |_|_|\__,_|   \_/ |_|\__,_|_|_| |_| |_|\___| |___/\__,_| |_| |_|\__,_|_.__/ \__,_|\__,_|\__,_|\___\___|
+                                                                                                                                           
+                                                                                                                                           ");
+                            Console.ResetColor();
+                            return;
+                        default:
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Neplatný príkaz, skús znova.");
+                            Console.ResetColor();
+                            break;
                     }
-                    if (command == 9)
-                    {
-                        return;
-                    }
-                    if (command == 67)
-                    {
-                        MyPlayer.Kredit += 20;
-                        Console.WriteLine("RECEPT NA BRAVCOVY GULAS");
-                        Console.WriteLine(@"Ingrediencie
-1 kg
-bravčové mäso (karé, krkovička al. stehno)
-4 PL
-bravčová masť
-4 ks
-veľka cibuľa
-2 PL
-mletá paprika
-1 PL
-drvená rasca
-1 KL
-mleté čierne korenie
-3 ks
-paradajka
-3 ks
-paprika
-6 ks
-stredne veľké zemiaky
-2 ks
-bobkový list
-4 strúčiky
-cesnak
-1 PL
-majoránka
-podľa chuti
-soľ
-Postup
-1
-V hrnci zahrejeme masť a pridáme nadrobno nasekanú cibuľu, ktorú zľahka posolíme a restujeme do sklovita.
-
-2
-K mäkkej cibuľke potom pridáme na kocky pokrájané mäso, ktoré ochutíme soľou, čiernym korením, rascou a mletou paprikou. Všetko dobre premiešame a mäso necháme zakryté dusiť vo vlastnej šťave zhruba 10 minút.
-
-3
-Medzitým si olúpeme paradajky (narežeme ich do kríža, na 30 sekúnd ich ponoríme do vriacej vody, ochladíme a stiahneme šupku) a nakrájame ich na kocky. Papriky nakrájame na tenučké rezančeky, zemiaky očistíme – 4 nakrájame na kocky a 2 odložíme bokom.
-
-4
-Paradajky, papriky a bobkové listy pridáme k mäsu, prilejeme iba toľko vody, aby bolo mäso ponorené, privedieme k varu, zakryjeme a na miernom plameni dusíme cca hodinu.
-
-5
-Po hodine postrúhame dva celé zemiaky na jemnom strúhadle a spolu so zemiakovými kockami ich pridáme k mäsu. Prilejeme toľko vody, aby bolo všetko zakryté a dusíme ďalších cca 20 minút.
-
-6
-Nakoniec guláš dochutíme soľou, prelisovaným cesnakom, majoránom, ešte krátko (5 minút) povaríme a podávame.
-
-7
-Ďalšie overené recepty na gulášové špeciality nájdete TU! ");
-                        return;
-                    }
-
 
                 }
 
-
-
-
-
-
-
-
-
-
-
             }
-
-
 
         }
     }
