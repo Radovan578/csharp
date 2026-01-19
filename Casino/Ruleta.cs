@@ -49,18 +49,88 @@ namespace Casino
 
                         int volba = int.Parse(Console.ReadLine());
 
+                        int tipCislo = -1;
+
+                        if (volba == 4)
+                        {
+                            Console.Write("Zadaj číslo (0 - 36 alebo 37 = 00): ");
+                            tipCislo = int.Parse(Console.ReadLine());
+                        }
+
+                        player.Kredit -= stavka;
+
+                        int vysledok = random.Next(0, 38); // 0–37 (37 = 00)
+                        string farba = GetFarba(vysledok);
+
+                        Console.WriteLine();
+                        Console.WriteLine("Ruleta sa točí...");
+                        Console.WriteLine($" Padlo číslo: {(vysledok == 37 ? "00" : vysledok.ToString())} ({farba})");
+
+                        bool vyhra = false;
+                        int vyhraSuma = 0;
+
+                        switch (volba)
+                        {
+                            case 1 when farba == "červená":
+                            case 2 when farba == "čierna":
+                                vyhra = true;
+                                vyhraSuma = stavka * 2;
+                                break;
+
+                            case 3 when farba == "zelená":
+                                vyhra = true;
+                                vyhraSuma = stavka * 18;
+                                break;
+
+                            case 4 when tipCislo == vysledok:
+                                vyhra = true;
+                                vyhraSuma = stavka * 36;
+                                break;
+                        }
+
+                        if (vyhra)
+                        {
+                            player.Kredit += vyhraSuma;
+
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("Vyhral si!");
+                            Console.WriteLine("Dostavas: " + vyhraSuma + " kreditov");
+                            Console.ResetColor();
+
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Prehral si " + stavka);
+                            Console.ResetColor();
+                        }
 
                     }
 
                 }
 
-
+                static string GetFarba(int cislo)
+                {
+                    if (cislo == 0 || cislo == 37)             // cislo 0 a 00 su zelene
+                        return "zelená";
+                    else if (cislo % 2 == 0)                   // parne cisla su cierne
+                        return "čierna";
+                    else                                       // neparne cisla su cervene
+                        return "červená";                      
+                }
             }
 
-
         }
+
     }
+
+
 }
+
+
+        
+    
+
 
 
 
