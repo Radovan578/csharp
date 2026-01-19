@@ -73,16 +73,19 @@ namespace Casino
                         {
                             case 1 when farba == "červená":
                             case 2 when farba == "čierna":
+                                player.Xp += 2;
                                 vyhra = true;
                                 vyhraSuma = stavka * 2;
                                 break;
 
                             case 3 when farba == "zelená":
+                                player.Xp += 10;
                                 vyhra = true;
                                 vyhraSuma = stavka * 18;
                                 break;
 
                             case 4 when tipCislo == vysledok:
+                                player.Xp += 20;
                                 vyhra = true;
                                 vyhraSuma = stavka * 36;
                                 break;
