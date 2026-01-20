@@ -9,6 +9,7 @@ namespace Casino
 {
     public class Player
     {
+        // Hlavné vlastnosti hráča 
         public int Kredit { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }

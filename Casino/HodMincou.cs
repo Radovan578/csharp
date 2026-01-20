@@ -15,17 +15,20 @@ namespace Casino
 
         public void HodMincouGame(Player player)                                       //hrac vybera stavku
         {
+            // Min hra "Hod mincou": hráč vsádza na Hlava alebo Orol
             while (true)
             {
-                Console.WriteLine("Pre menu napis 'M', Pre stavku stlac 'ENTER' ");
+                Console.WriteLine("Pre menu stlac 'M', Pre pokracovanie stlac hociaku klavesu ");
                 ConsoleKey key = Console.ReadKey(true).Key;
                 if (key == ConsoleKey.M)
                 {
+                    // Návrat do menu
                     Console.Clear();
                     break;
                 }
-                if (key == ConsoleKey.Enter)
+                else
                 {
+                    // Zistenie stávky od hráča
                     Console.WriteLine("Kolko chces stavit?");
                     string stavkaTxt = Console.ReadLine();
                     int stavka = int.Parse(stavkaTxt);
@@ -33,13 +36,15 @@ namespace Casino
 
                     if (stavka > player.Kredit)
                     {
+                        // Nedostatok kreditu
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Nemas dostatok kreditov na hranie!");
+                        Console.WriteLine("Nemas dostatok peňazí na hranie!");
                         Console.ResetColor();
                         return;
                     }
                     else
                     {
+                        // Vytvorenie zoznamu možností a náhodný výber výsledku
                         List<string> symbols = new List<string>();                          //nahodne vybratie znaku
                         symbols.Add(Hlava);
                         symbols.Add(Orol);
@@ -47,10 +52,12 @@ namespace Casino
                         int index = r.Next(symbols.Count);
                         string symbol = symbols[index];
 
+                        // Hráč vyberie znak
                         Console.WriteLine("Vyber si znak: 1.Hlava 2.Orol ");
                         string SymbolPick = Console.ReadLine();
                         if (SymbolPick == "1")
                         {
+                            // Porovnanie výberu s náhodným výsledkom
                             SymbolPick = Hlava;                                    //porovnanie znakov
                             if (SymbolPick == symbol)
                             {
@@ -60,23 +67,25 @@ namespace Casino
                                 Console.ForegroundColor = ConsoleColor.Green;
 
                                 Console.WriteLine("Vyhral si!");
-                                Console.WriteLine("Dostavas: " + vyhra + " kreditov");
+                                Console.WriteLine("Dostávaš: " + vyhra + " EUR");
                                 Console.ResetColor();
 
                             }
                             else
                             {
+                                // Prehra: odpočítanie stávky a pridanie XP
                                 Console.ForegroundColor = ConsoleColor.Red;
                                 player.Xp += 1;
 
                                 player.Kredit -= stavka;
-                                Console.WriteLine("Prehral si " + stavka);
+                                Console.WriteLine("Prehral si " + stavka + " EUR");
                                 Console.ResetColor();
 
                             }
                         }
                         else if (SymbolPick == "2")
                         {
+                            // Rovnaká logika pre druhú možnosť
                             SymbolPick = Orol;
                             if (SymbolPick == symbol)
                             {
@@ -86,7 +95,7 @@ namespace Casino
 
                                 Console.ForegroundColor = ConsoleColor.Green;
                                 Console.WriteLine("Vyhral si!");
-                                Console.WriteLine("Dostavas: " + vyhra + " kreditov");
+                                Console.WriteLine("Dostavas: " + vyhra + " EUR");
                                 Console.ResetColor();
                             }
                             else
@@ -95,7 +104,7 @@ namespace Casino
                                 player.Xp += 1;
 
                                 player.Kredit -= stavka;
-                                Console.WriteLine("Prehral si " + stavka);
+                                Console.WriteLine("Prehral si " + stavka + " EUR");
                                 Console.ResetColor();
 
                             }

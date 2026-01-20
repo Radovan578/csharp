@@ -8,6 +8,7 @@ namespace Casino
 {
     public class SlotMSymbols
     {
+        // Symbol, ktorý sa zobrazuje v automate, a jeho pravdepodobnosť
         public char Symbol { get; set; }
         public int Chance { get; set; }
 

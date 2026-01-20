@@ -15,12 +15,14 @@ namespace Casino
 
         public void StartUI()
         {
+            // Spustí animáciu načítavania loga a zablokuje kurzor
             Console.CursorVisible = false;
             LoadingUI();
 
         }
         private void LogoCSN()
         {
+            // Vykreslí ASCII logo v strede konzoly
             string[] lines = new string[]
             {
 "  ██████╗ █████╗ ███████╗██╗███╗   ██╗ ██████╗ ",
@@ -38,6 +40,7 @@ namespace Casino
 
             for (int i = 0; i < lines.Length; i++)
             {
+                // Vypočíta pozíciu, kde sa má každý riadok vykresliť
                 string line = lines[i];
                 int xStart = (widthConsole / 2) - (line.Length / 2);
                 if (xStart < 0) xStart = 0;
@@ -50,107 +53,55 @@ namespace Casino
                 }
                 catch (ArgumentOutOfRangeException)
                 {
+                    // Ak je konzola príliš malá, vypíšeme chybové hlásenie
                     Console.WriteLine("Error!!");
                 }
             }
-
-
-
-
         }
         public void LoadingUI()
         {
+            // Jednoduchá animácia loadingu: opakovane zobrazí logo a "Loading" v rôznych stavoch
             LogoCSN();
-            CursorPositionLoadning();
-            Thread.Sleep(500);
-            Console.Write("[░░░░░░░░░░░░░░░░]   0%  ─⊙─  Booting Casino");
-
-            Thread.Sleep(500);
+            StredLoga();
+            Console.WriteLine("Loading....");
+            Thread.Sleep(1000);
             Console.Clear();
-
             LogoCSN();
-            CursorPositionLoadning();
-            Console.Write(" [██░░░░░░░░░░░░░░]  10%  ─⊙─  Initializing.....");
-
-            Thread.Sleep(700);
+            StredLoga();
+            Console.WriteLine("Loading.");
+            Thread.Sleep(1000);
             Console.Clear();
-
             LogoCSN();
-            CursorPositionLoadning();
-            Console.Write(" [████░░░░░░░░░░░░]  20%  ─⊙─  Loading fruits");
-
-            Thread.Sleep(400);
+            StredLoga();
+            Console.WriteLine("Loading..");
+            Thread.Sleep(1000);
             Console.Clear();
-
             LogoCSN();
-            CursorPositionLoadning();
-            Console.Write(" [██████░░░░░░░░░░]  30%  ─⊙─  Loading Coin");
-
-            Thread.Sleep(400);
+            StredLoga();
+            Console.WriteLine("Loading...");
+            Thread.Sleep(1000);
             Console.Clear();
-
             LogoCSN();
-            CursorPositionLoadning();
-            Console.Write(" [████████░░░░░░░░]  40%  ─⊙─  Starting system");
-
-            Thread.Sleep(400);
+            StredLoga();
+            Console.WriteLine("Loading....");
+            Thread.Sleep(1000);
             Console.Clear();
-
             LogoCSN();
-            CursorPositionLoadning();
-            Console.Write(" [██████████░░░░░░]  50%  ─⊙─  Launching services");
-
-            Thread.Sleep(700);
-            Console.Clear();
-
-            LogoCSN();
-            CursorPositionLoadning();
-            Console.Write("  [████████████░░░░]  60%  ─⊙─  Connecting to network");
-
-            Thread.Sleep(100);
-            Console.Clear();
-
-            LogoCSN();
-            CursorPositionLoadning();
-            Console.Write(" [██████████████░░]  70%  ─⊙─  Anticheat ready");
-
-            Thread.Sleep(300);
-            Console.Clear();
-
-            LogoCSN();
-            CursorPositionLoadning();
-            Console.Write(" [████████████████]  80%  ─⊙─  Optimizing system");
-
-            Thread.Sleep(300);
-            Console.Clear();
-
-            LogoCSN();
-            CursorPositionLoadning();
-            Console.Write(" [██████████████████░░]  90% ─⊙─  Preparing UI");
-
-            Thread.Sleep(800);
-            Console.Clear();
-
-            LogoCSN();
-            CursorPositionLoadning();
+            StredLoga();
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write(" [████████████████████] 100% ─⊙─  Casino ready!");
-            Console.ForegroundColor = ConsoleColor.White;
-
-            Thread.Sleep(2000);
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Casino loaded");
+            Thread.Sleep(6000);
+            Console.ResetColor();
 
         }
-
-        private void CursorPositionLoadning()
+        private void StredLoga()
         {
-
+            // Pomocná metóda na nastavenie kurzora pri logu
             int centerX = Console.WindowWidth / 2;
             int centerY = Console.WindowHeight / 2;
-            int y = centerY + 10;
-            int x = Math.Max(0, centerX - 30);
+            int y = centerY + 5;
+            int x = Math.Max(0, centerX - 4);
             Console.SetCursorPosition(x, y);
         }
-
     }
 }
