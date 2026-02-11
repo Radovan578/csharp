@@ -24,5 +24,11 @@ namespace Casino
             Level = level;
             Xp = xp;
         }
+        public bool Reward5 = false;
+        public bool Reward15 = false;
+        public bool Reward30 = false;
+        public bool Reward50 = false;
+        public bool Reward100 = false;
+
     }
 }

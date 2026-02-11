@@ -12,7 +12,7 @@ namespace Casino
         {
             // Nekonečný herný cyklus
             while (true)
-            {   
+            {
                 Console.WriteLine("Pre menu napis 'M', Pre stavku stlac 'ENTER' ");
                 ConsoleKey key = Console.ReadKey(true).Key;
                 if (key == ConsoleKey.M)
