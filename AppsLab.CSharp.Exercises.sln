@@ -107,37 +107,39 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cvicenie_Teploty", "Cviceni
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cvicenie_List2", "Cvicenie_List2\Cvicenie_List2.csproj", "{0BF59FEE-B10E-42C2-BEC8-EBA7AC911E58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cvicenie_BattleSimulator", "Cvicenie_BattleSimulator\Cvicenie_BattleSimulator.csproj", "{3EC4174C-D8FE-4B50-AB31-E9FEDA62747A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cvicenie_BattleSimulator", "Cvicenie_BattleSimulator\Cvicenie_BattleSimulator.csproj", "{3EC4174C-D8FE-4B50-AB31-E9FEDA62747A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cvicenie_Objekty", "Cvicenie_Objekty\Cvicenie_Objekty.csproj", "{D1928151-06C8-424D-AE95-872DFC6DE5CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cvicenie_Objekty", "Cvicenie_Objekty\Cvicenie_Objekty.csproj", "{D1928151-06C8-424D-AE95-872DFC6DE5CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cvicenie_RandomGenerator", "Cvicenie_RandomGenerator\Cvicenie_RandomGenerator.csproj", "{DE9C5A8F-79BE-435E-8B85-AAF6E0E70080}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cvicenie_RandomGenerator", "Cvicenie_RandomGenerator\Cvicenie_RandomGenerator.csproj", "{DE9C5A8F-79BE-435E-8B85-AAF6E0E70080}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cvicenie_IdleFarmer", "Cvicenie_IdleFarmer\Cvicenie_IdleFarmer.csproj", "{6F059813-BBD6-435D-8ABA-52B570EB6EF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cvicenie_IdleFarmer", "Cvicenie_IdleFarmer\Cvicenie_IdleFarmer.csproj", "{6F059813-BBD6-435D-8ABA-52B570EB6EF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cvicenie_Pravdepodobnost", "Cvicenie_Pravdepodobnost\Cvicenie_Pravdepodobnost.csproj", "{EB13CE4A-FEA8-4285-9C66-78DA39733350}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cvicenie_Pravdepodobnost", "Cvicenie_Pravdepodobnost\Cvicenie_Pravdepodobnost.csproj", "{EB13CE4A-FEA8-4285-9C66-78DA39733350}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cvicenie_GameShop", "Cvicenie_GameShop\Cvicenie_GameShop.csproj", "{85F66E30-9972-4C38-9060-BC2B634A62A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cvicenie_GameShop", "Cvicenie_GameShop\Cvicenie_GameShop.csproj", "{85F66E30-9972-4C38-9060-BC2B634A62A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cvicenie_SIMS", "Cvicenie_SIMS\Cvicenie_SIMS.csproj", "{060B650A-5EE9-4BB0-BCE0-428F3B868CAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cvicenie_SIMS", "Cvicenie_SIMS\Cvicenie_SIMS.csproj", "{060B650A-5EE9-4BB0-BCE0-428F3B868CAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cvicenie_Ukladanie", "Cvicenie_Ukladanie\Cvicenie_Ukladanie.csproj", "{B43D0EB7-E700-481F-8448-74E3DC772EE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cvicenie_Ukladanie", "Cvicenie_Ukladanie\Cvicenie_Ukladanie.csproj", "{B43D0EB7-E700-481F-8448-74E3DC772EE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cvicenie_CookieClicker", "Cvicenie_CookieClicker\Cvicenie_CookieClicker.csproj", "{C52A6D25-5FCA-4734-A83B-69A7537D858F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cvicenie_CookieClicker", "Cvicenie_CookieClicker\Cvicenie_CookieClicker.csproj", "{C52A6D25-5FCA-4734-A83B-69A7537D858F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Casino", "Casino\Casino.csproj", "{D3ADFD25-4752-4FCC-830D-85D7652CE216}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Casino", "Casino\Casino.csproj", "{D3ADFD25-4752-4FCC-830D-85D7652CE216}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPFApps", "WPFApps", "{49743368-C60D-4EAA-8434-1430F79BFE87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{E1BC6EA2-BA17-4750-A3CF-C5F50C955EAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{E1BC6EA2-BA17-4750-A3CF-C5F50C955EAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp2", "WpfApp2\WpfApp2.csproj", "{0811422B-8EAA-406C-96F7-ACB15EA5D10C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp2", "WpfApp2\WpfApp2.csproj", "{0811422B-8EAA-406C-96F7-ACB15EA5D10C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp3", "WpfApp3\WpfApp3.csproj", "{2534976F-FA17-44C4-944B-2B15D42C8F73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp3", "WpfApp3\WpfApp3.csproj", "{2534976F-FA17-44C4-944B-2B15D42C8F73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stopky", "Stopky\Stopky.csproj", "{91AEB3C5-EE7F-4E4D-A67C-3AB7BB18ACD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stopky", "Stopky\Stopky.csproj", "{91AEB3C5-EE7F-4E4D-A67C-3AB7BB18ACD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Semafor", "Semafor\Semafor.csproj", "{6A038B36-7B23-4C59-8E85-B724439C8EC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Semafor", "Semafor\Semafor.csproj", "{6A038B36-7B23-4C59-8E85-B724439C8EC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F1 Start", "F1 Start\F1 Start.csproj", "{B4A705D0-C753-46B6-B140-BDB3798DAE9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -929,6 +931,18 @@ Global
 		{6A038B36-7B23-4C59-8E85-B724439C8EC2}.Release|x64.Build.0 = Release|Any CPU
 		{6A038B36-7B23-4C59-8E85-B724439C8EC2}.Release|x86.ActiveCfg = Release|Any CPU
 		{6A038B36-7B23-4C59-8E85-B724439C8EC2}.Release|x86.Build.0 = Release|Any CPU
+		{B4A705D0-C753-46B6-B140-BDB3798DAE9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4A705D0-C753-46B6-B140-BDB3798DAE9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4A705D0-C753-46B6-B140-BDB3798DAE9D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B4A705D0-C753-46B6-B140-BDB3798DAE9D}.Debug|x64.Build.0 = Debug|Any CPU
+		{B4A705D0-C753-46B6-B140-BDB3798DAE9D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B4A705D0-C753-46B6-B140-BDB3798DAE9D}.Debug|x86.Build.0 = Debug|Any CPU
+		{B4A705D0-C753-46B6-B140-BDB3798DAE9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4A705D0-C753-46B6-B140-BDB3798DAE9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4A705D0-C753-46B6-B140-BDB3798DAE9D}.Release|x64.ActiveCfg = Release|Any CPU
+		{B4A705D0-C753-46B6-B140-BDB3798DAE9D}.Release|x64.Build.0 = Release|Any CPU
+		{B4A705D0-C753-46B6-B140-BDB3798DAE9D}.Release|x86.ActiveCfg = Release|Any CPU
+		{B4A705D0-C753-46B6-B140-BDB3798DAE9D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1000,6 +1014,7 @@ Global
 		{2534976F-FA17-44C4-944B-2B15D42C8F73} = {49743368-C60D-4EAA-8434-1430F79BFE87}
 		{91AEB3C5-EE7F-4E4D-A67C-3AB7BB18ACD3} = {49743368-C60D-4EAA-8434-1430F79BFE87}
 		{6A038B36-7B23-4C59-8E85-B724439C8EC2} = {49743368-C60D-4EAA-8434-1430F79BFE87}
+		{B4A705D0-C753-46B6-B140-BDB3798DAE9D} = {49743368-C60D-4EAA-8434-1430F79BFE87}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DA28B771-864A-4519-8BAA-28AE4E03BA3F}
