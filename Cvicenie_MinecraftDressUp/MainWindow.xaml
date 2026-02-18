@@ -1,0 +1,24 @@
+﻿<Window x:Class="Cvicenie_MinecraftDressUp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cvicenie_MinecraftDressUp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="800">
+    <Grid>
+        <ComboBox Name="Combox_HelmPicker" HorizontalAlignment="Left" Margin="124,121,0,0" VerticalAlignment="Top" Width="143" SelectionChanged="Combox_HelmPicker_SelectionChanged"/>
+        <Label Name="Label_ArmorPowerValue" Content="Armor Power:    " HorizontalAlignment="Left" Margin="42,346,0,0" VerticalAlignment="Top" Width="168" Background="#FFFF5757"/>
+        <Image Name="Image_HelmetPlaceHolder" HorizontalAlignment="Left" Height="90" Margin="534,83,0,0" VerticalAlignment="Top" Width="100"/>
+        <ComboBox Name="Combox_BodyPicker" HorizontalAlignment="Left" Margin="124,247,0,0" VerticalAlignment="Top" Width="143" SelectionChanged="Combox_BodyPicker_SelectionChanged"/>
+        <Image Name="Image_BodyPlaceHolder" HorizontalAlignment="Left" Height="90" Margin="534,224,0,0" VerticalAlignment="Top" Width="100"/>
+        <ComboBox Name="Combox_PantsPicker" HorizontalAlignment="Left" Margin="124,470,0,0" VerticalAlignment="Top" Width="143" SelectionChanged="Combox_PantsPicker_SelectionChanged"/>
+        <Image Name="Image_PantsPlaceHolder" Height="90" Width="100" Margin="534,425,166,269"/>
+        <ComboBox Name="Combox_LegPicker" HorizontalAlignment="Left" Margin="124,617,0,0" VerticalAlignment="Top" Width="143" SelectionChanged="Combox_LegPicker_SelectionChanged"/>
+        <Image Name="Image_LegPlaceHolder" HorizontalAlignment="Left" Height="90" Margin="534,574,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Name="Label_ArmorMultiplier" Content="Armor Multiplier:    " HorizontalAlignment="Left" Margin="42,402,0,0" VerticalAlignment="Top" Background="#FFFF6464" Width="168"/>
+
+
+
+    </Grid>
+</Window>
