@@ -18,8 +18,9 @@ namespace Cvicenie_MinecraftDressUp
         public int YTop { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
+        public int Price { get; set; }
 
-        public ArmorPart(string displayName, int armorPower, EArmorType armorType, EArmorPartName partName, int xLeft, int yTop, int width, int height)
+        public ArmorPart(string displayName, int armorPower, EArmorType armorType, EArmorPartName partName, int xLeft, int yTop, int width, int height, int price)
         {
             DisplayName = displayName;
             ArmorPower = armorPower;
@@ -29,6 +30,7 @@ namespace Cvicenie_MinecraftDressUp
             YTop = yTop;
             Width = width;
             Height = height;
+            Price = price;
         }
 
         public override string? ToString()
