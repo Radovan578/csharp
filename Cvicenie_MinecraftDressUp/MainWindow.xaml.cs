@@ -35,7 +35,7 @@ namespace Cvicenie_MinecraftDressUp
         public MainWindow()
         {
             InitializeComponent();
-
+            UpdateMoney();
 
             Armors_Head.Add(new ArmorPart("Plesinka", 0, EArmorType.None, EArmorPartName.Head, 28, 29, 100, 90, 0));
             Armors_Head.Add(new ArmorPart("Helma bronzova", 1, EArmorType.Bronze, EArmorPartName.Head, 28, 29, 100, 90, 50));
@@ -89,7 +89,6 @@ namespace Cvicenie_MinecraftDressUp
                 playerSet.Add(Pants);
             if (Leg != null)
                 playerSet.Add(Leg);
-
 
 
             var groupedItems = playerSet.GroupBy(p => p.ArmorType, (key, g) => new { ArmorType = key, Items = g.ToList() }).ToList();
@@ -228,7 +227,7 @@ namespace Cvicenie_MinecraftDressUp
                 Image_Shop.Visibility = Visibility.Hidden;
             }
 
-            UpdateLabels();
+            
         }
 
         private void UpdateMoney()
@@ -240,11 +239,12 @@ namespace Cvicenie_MinecraftDressUp
         {
             if (selectedArmorPart != null)
             {
-                
+
                 Buy_Button.Content = $"Kúpiť predmet ({selectedArmorPart.Price} $)";
 
-                   Money -= selectedArmorPart.Price;
-                   UpdateMoney();
+                Money -= selectedArmorPart.Price;
+
+                UpdateMoney();
             }
         }
 

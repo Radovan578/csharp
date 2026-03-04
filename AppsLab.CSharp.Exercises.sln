@@ -143,6 +143,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F1 Start", "F1 Start\F1 Sta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cvicenie_MinecraftDressUp", "Cvicenie_MinecraftDressUp\Cvicenie_MinecraftDressUp.csproj", "{A8FAAFA0-DEC5-4B39-816C-55B72C7D871D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cvicenie_Pokemon", "Cvicenie_Pokemon\Cvicenie_Pokemon.csproj", "{49F98D70-F930-4216-A888-447D725875DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -957,6 +959,18 @@ Global
 		{A8FAAFA0-DEC5-4B39-816C-55B72C7D871D}.Release|x64.Build.0 = Release|Any CPU
 		{A8FAAFA0-DEC5-4B39-816C-55B72C7D871D}.Release|x86.ActiveCfg = Release|Any CPU
 		{A8FAAFA0-DEC5-4B39-816C-55B72C7D871D}.Release|x86.Build.0 = Release|Any CPU
+		{49F98D70-F930-4216-A888-447D725875DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49F98D70-F930-4216-A888-447D725875DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49F98D70-F930-4216-A888-447D725875DE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{49F98D70-F930-4216-A888-447D725875DE}.Debug|x64.Build.0 = Debug|Any CPU
+		{49F98D70-F930-4216-A888-447D725875DE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{49F98D70-F930-4216-A888-447D725875DE}.Debug|x86.Build.0 = Debug|Any CPU
+		{49F98D70-F930-4216-A888-447D725875DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49F98D70-F930-4216-A888-447D725875DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49F98D70-F930-4216-A888-447D725875DE}.Release|x64.ActiveCfg = Release|Any CPU
+		{49F98D70-F930-4216-A888-447D725875DE}.Release|x64.Build.0 = Release|Any CPU
+		{49F98D70-F930-4216-A888-447D725875DE}.Release|x86.ActiveCfg = Release|Any CPU
+		{49F98D70-F930-4216-A888-447D725875DE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1030,6 +1044,7 @@ Global
 		{6A038B36-7B23-4C59-8E85-B724439C8EC2} = {49743368-C60D-4EAA-8434-1430F79BFE87}
 		{B4A705D0-C753-46B6-B140-BDB3798DAE9D} = {49743368-C60D-4EAA-8434-1430F79BFE87}
 		{A8FAAFA0-DEC5-4B39-816C-55B72C7D871D} = {49743368-C60D-4EAA-8434-1430F79BFE87}
+		{49F98D70-F930-4216-A888-447D725875DE} = {49743368-C60D-4EAA-8434-1430F79BFE87}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DA28B771-864A-4519-8BAA-28AE4E03BA3F}
