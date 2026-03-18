@@ -20,8 +20,8 @@ namespace Cvicenie_Pokemon
         {
             InitializeComponent();
 
-            Hero hero = new Hero(50, 100, 10,100);
-            Enemy enemy = new Enemy(200, 1);
+            Hero hero = new Hero(100, 100, 5, 100);
+            Enemy enemy = new Enemy(200, 20);
 
 
             Window_Fight fight_window = new Window_Fight(hero,enemy);

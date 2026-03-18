@@ -12,6 +12,7 @@ namespace Cvicenie_Pokemon
         public int Health_Max { get; set; }    //zobrazuje jeho max HP
         public int Damage { get; set; }
         public int Energy { get; set; }
+        public int Energy_Max { get; set; } = 100;
 
         public Hero(int health, int health_Max, int damage, int energy)
         {

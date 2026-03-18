@@ -10,13 +10,18 @@
 
         <Image Margin="10,0,400,193" Source="/Images/Pikachu.png" Stretch="Fill"/>
         <Image Margin="463,5,50,198" Source="/Images/Charizard.png" Stretch="Fill"/>
-        <ProgressBar Name="ProgressBar_Hero" HorizontalAlignment="Left" Height="35" Margin="72,281,0,0" VerticalAlignment="Top" Width="266" ValueChanged="ProgressBar_Hero_ValueChanged" Maximum="200" />
-        <ProgressBar Name="ProgressBar_Enemy" HorizontalAlignment="Left" Height="35" Margin="473,281,0,0" VerticalAlignment="Top" Width="267"/>
+        <ProgressBar Name="ProgressBar_Hero" HorizontalAlignment="Left" Height="35" Margin="72,281,0,0" VerticalAlignment="Top" Width="266" ValueChanged="ProgressBar_Hero_ValueChanged" />
+        <ProgressBar Name="ProgressBar_Enemy" HorizontalAlignment="Left" Height="35" Margin="473,281,0,0" VerticalAlignment="Top" Width="267" ValueChanged="ProgressBar_Enemy_ValueChanged"/>
         <Button Content="Light Attack" HorizontalAlignment="Left" Margin="35,333,0,0" VerticalAlignment="Top" Height="38" Width="120" Click="Button_Click"/>
         <Button Content="Hight Attack" HorizontalAlignment="Left" Margin="320,333,0,0" VerticalAlignment="Top" Height="38" Width="120" Click="Button_Click_2" />
         <Button Content="Medium Attack" HorizontalAlignment="Left" Margin="176,333,0,0" VerticalAlignment="Top" Height="38" Width="120" Click="Button_Click_1" />
         <Label Name="Label_GameStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Width="229" Margin="303,204,0,0" Height="44" FontSize="25"/>
         <ProgressBar Name="ProgressBar_Energy" HorizontalAlignment="Left" Height="34" Margin="111,390,0,0" VerticalAlignment="Top" Width="208" Foreground="#FFFFF727"/>
+        <Button Content="Heal" HorizontalAlignment="Left" Margin="473,333,0,0" VerticalAlignment="Top" Height="38" Width="120" Click="Button_Click_3" />
+        <Button Content="Reset" HorizontalAlignment="Center" Margin="0,281,0,0" VerticalAlignment="Top" Height="35" Width="67" Click="Button_Click_4" />
+        <Label Name="Label_HeroHP" Content="0 / 0" HorizontalAlignment="Left" Margin="14,231,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="11" Height="38" Width="162" Background="White"/>
+        <Label Name="Label_EnemyHP" Content="0 / 0" HorizontalAlignment="Left" Margin="616,236,0,0" VerticalAlignment="Top" Foreground="#FF312323" FontSize="11" Height="28" Width="174"/>
+
 
 
     </Grid>
