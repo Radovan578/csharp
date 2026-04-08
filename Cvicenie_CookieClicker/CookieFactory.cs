@@ -64,7 +64,6 @@ namespace Cvicenie_CookieClicker
 
 
                 Console.Clear();
-
                 Player.Day++;
             }
         }
