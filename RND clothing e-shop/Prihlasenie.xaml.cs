@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace RND_clothing_e_shop
+{
+    /// <summary>
+    /// Interaction logic for Prihlasenie.xaml
+    /// </summary>
+    public partial class Prihlasenie : Window
+    {
+        public Prihlasenie()
+        {
+            InitializeComponent();
+            Loaded += MainWindow_Loaded;
+        }
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(System.IO.File.Exists("Videos/wpf projekt rnd.mp4").ToString());
+
+            BackgroundVideo.Source = new Uri("Videos/wpf projekt rnd.mp4", UriKind.Relative);
+
+            // LOOP
+            BackgroundVideo.MediaEnded += BackgroundVideo_MediaEnded;
+
+            BackgroundVideo.Play();
+        }
+        private void BackgroundVideo_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            BackgroundVideo.Position = TimeSpan.Zero;
+            BackgroundVideo.Play();
+        }
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void GoToRegister_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }
+
+}
