@@ -23,8 +23,6 @@ namespace RND_clothing_e_shop
         }
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(System.IO.File.Exists("Videos/wpf projekt rnd.mp4").ToString());
-
             BackgroundVideo.Source = new Uri("Videos/wpf projekt rnd.mp4", UriKind.Relative);
 
             // LOOP
@@ -41,14 +39,23 @@ namespace RND_clothing_e_shop
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            Prihlasenie prihlasenie = new Prihlasenie();
+            prihlasenie.Show();
+
+            this.Close();
         }
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
+            Registracia registracia = new Registracia();
+            registracia.Show();
+
+            this.Close();
         }
 
         private void GuestButton_Click(object sender, RoutedEventArgs e)
         {
+
         }
     }
 }

@@ -58,19 +58,50 @@
     </Window.Resources>
 
     <Grid>
+
         <!-- Video -->
         <MediaElement x:Name="BackgroundVideo"
                       LoadedBehavior="Manual"
                       UnloadedBehavior="Stop"
                       Stretch="UniformToFill"
                       Volume="0"
-                      IsHitTestVisible="False"/>
+                      IsHitTestVisible="False"
+                      Panel.ZIndex="0"/>
 
         <!-- Overlay -->
-        <Grid Background="#88000000"/>
+        <Grid Background="#88000000"
+              Panel.ZIndex="1"/>
+
+        <!-- BACK BUTTON -->
+        <Button x:Name="BackButton"
+                Content="←"
+                Width="70"
+                Height="70"
+                FontSize="30"
+                FontWeight="Bold"
+                Background="#66000000"
+                Foreground="White"
+                BorderThickness="0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="25"
+                Cursor="Hand"
+                Click="BackButton_Click"
+                Panel.ZIndex="3">
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="35">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
         <!-- Content -->
-        <Viewbox Stretch="Uniform">
+        <Viewbox Stretch="Uniform" Panel.ZIndex="2">
             <Grid Width="1400" Height="800">
 
                 <Border Width="560"
@@ -129,5 +160,6 @@
                 </Border>
             </Grid>
         </Viewbox>
+
     </Grid>
 </Window>
