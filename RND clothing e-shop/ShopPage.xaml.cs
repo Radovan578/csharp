@@ -23,5 +23,32 @@ namespace RND_clothing_e_shop
         {
             InitializeComponent();
         }
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+
+            this.Close();
+        }
+        private void CartButton_Click(object sender, RoutedEventArgs e)
+        {
+            KosikWindow kosikWindow = new KosikWindow();
+            kosikWindow.Show();
+
+            this.Close();
+        }
+
+        private void AllCategory_Click(object sender, RoutedEventArgs e) { }
+        private void TrickaCategory_Click(object sender, RoutedEventArgs e) { }
+        private void MikinyCategory_Click(object sender, RoutedEventArgs e) { }
+        private void NohaviceCategory_Click(object sender, RoutedEventArgs e) { }
+        private void BundyCategory_Click(object sender, RoutedEventArgs e) { }
+        private void TopankyCategory_Click(object sender, RoutedEventArgs e) { }
+        private void DoplnkyCategory_Click(object sender, RoutedEventArgs e) { }
+
+        private void AddWhiteShirt_Click(object sender, RoutedEventArgs e) { }
+        private void AddBlackHoodie_Click(object sender, RoutedEventArgs e) { }
+        private void AddJeans_Click(object sender, RoutedEventArgs e) { }
+        private void AddJacket_Click(object sender, RoutedEventArgs e) { }
     }
 }

@@ -55,7 +55,10 @@ namespace RND_clothing_e_shop
 
         private void GuestButton_Click(object sender, RoutedEventArgs e)
         {
+            ShopPage shopPage = new ShopPage();
+            shopPage.Show();
 
+            this.Close();
         }
     }
 }
