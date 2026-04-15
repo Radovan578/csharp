@@ -8,6 +8,7 @@ namespace RND_clothing_e_shop
 {
     public class AuthServis
     {
-
+        public string Message { get; set; }
+        
     }
 }
