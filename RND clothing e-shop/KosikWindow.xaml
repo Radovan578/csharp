@@ -107,7 +107,7 @@
 
                     <ScrollViewer Grid.Row="1"
                                   VerticalScrollBarVisibility="Auto">
-                        <StackPanel>
+                        <StackPanel x:Name="KosikItemsPanel">
 
                             <!-- Produkt 1 -->
                             <Border Background="#FF262626"
@@ -349,8 +349,9 @@
                                    Foreground="White"
                                    FontSize="24"
                                    FontWeight="Bold"/>
-                        <TextBlock Grid.Column="1"
-                                   Text="84,97 €"
+                        <TextBlock x:Name="TotalPriceTxt"
+                                   Grid.Column="1"
+                                   Text="0.00 €"
                                    Foreground="White"
                                    FontSize="24"
                                    FontWeight="Bold"/>
