@@ -130,11 +130,11 @@
                                FontWeight="Bold"
                                Margin="0,0,0,20"/>
 
-                    <Button Content="Všetko" Style="{StaticResource CategoryButtonStyle}"/>
-                    <Button Content="Tričká" Style="{StaticResource CategoryButtonStyle}"/>
-                    <Button Content="Mikiny" Style="{StaticResource CategoryButtonStyle}"/>
-                    <Button Content="Nohavice" Style="{StaticResource CategoryButtonStyle}"/>
-                    <Button Content="Bundy" Style="{StaticResource CategoryButtonStyle}"/>
+                    <Button Content="Všetko" Style="{StaticResource CategoryButtonStyle}" Click="AllCategory_Click"/>
+                    <Button Content="Tričká" Style="{StaticResource CategoryButtonStyle}" Click="TrickaCategory_Click"/>
+                    <Button Content="Mikiny" Style="{StaticResource CategoryButtonStyle}" Click="MikinyCategory_Click"/>
+                    <Button Content="Nohavice" Style="{StaticResource CategoryButtonStyle}" Click="NohaviceCategory_Click"/>
+                    <Button Content="Bundy" Style="{StaticResource CategoryButtonStyle}" Click="BundyCategory_Click"/>
 
                     <Border Height="30"/>
 

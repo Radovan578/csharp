@@ -12,6 +12,7 @@ namespace RND_clothing_e_shop
         public static List<Produkt> KosikList = new List<Produkt>();
         private List<Produkt> VsetkyProdukty = new List<Produkt>();
 
+
         public ShopPage()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace RND_clothing_e_shop
                 new Produkt { Name = "Tenisky", Price = 59.99m, Category = "Topánky" },
                 new Produkt { Name = "Hodvábna šatka", Price = 12.50m, Category = "Doplnky" }
             };
+            
         }
 
         private void ZobrazProdukty(string kategoria)
@@ -39,6 +41,7 @@ namespace RND_clothing_e_shop
             var filtrovane = kategoria == "Všetko"
                 ? VsetkyProdukty
                 : VsetkyProdukty.Where(p => p.Category == kategoria).ToList();
+
 
             foreach (var prod in filtrovane)
             {
@@ -108,11 +111,26 @@ namespace RND_clothing_e_shop
             this.Close();
         }
 
-        private void AllCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Všetko");
-        private void TrickaCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Tričká");
-        private void MikinyCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Mikiny");
-        private void NohaviceCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Nohavice");
-        private void BundyCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Bundy");
+        private void AllCategory_Click(object sender, RoutedEventArgs e)
+        {
+            ZobrazProdukty("Všetko");
+        }
+        private void TrickaCategory_Click(object sender, RoutedEventArgs e)
+        {
+            ZobrazProdukty("Tričká");
+        }
+        private void MikinyCategory_Click(object sender, RoutedEventArgs e)
+        {
+            ZobrazProdukty("Mikiny");
+        }
+        private void NohaviceCategory_Click(object sender, RoutedEventArgs e)
+        {
+            ZobrazProdukty("Nohavice");
+        }
+        private void BundyCategory_Click(object sender, RoutedEventArgs e)
+        {
+            ZobrazProdukty("Bundy");
+        }
         private void TopankyCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Topánky");
         private void DoplnkyCategory_Click(object sender, RoutedEventArgs e) => ZobrazProdukty("Doplnky");
 
