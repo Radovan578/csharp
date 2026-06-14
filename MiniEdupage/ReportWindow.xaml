@@ -1,0 +1,27 @@
+﻿<Window x:Class="MiniEdupage.ReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Report - Priemery Žiakov" Height="400" Width="450" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,15">
+            <TextBlock Text="Report" FontSize="20" FontWeight="Bold" Foreground="DarkBlue"/>
+            <TextBlock Text="Prehľad priemerných známok (zoradené od najlepšieho)" Foreground="Gray"/>
+        </StackPanel>
+
+        <DataGrid Name="ReportDataGrid" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Meno žiaka" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Počet známok" Binding="{Binding PocetZnamok}" Width="100"/>
+                <DataGridTextColumn Header="Priemerná známka" Binding="{Binding PriemernaZnamka}" Width="120"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Grid.Row="2" Content="Zavrieť" HorizontalAlignment="Right" Width="80" Height="25" Margin="0,15,0,0" Click="Zavriet_Click"/>
+    </Grid>
+</Window>

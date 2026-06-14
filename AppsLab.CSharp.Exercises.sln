@@ -145,7 +145,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cvicenie_MinecraftDressUp",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cvicenie_Pokemon", "Cvicenie_Pokemon\Cvicenie_Pokemon.csproj", "{49F98D70-F930-4216-A888-447D725875DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RND clothing e-shop", "RND clothing e-shop\RND clothing e-shop.csproj", "{51FAD674-4156-4393-985F-82D16094CAB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RND clothing e-shop", "RND clothing e-shop\RND clothing e-shop.csproj", "{51FAD674-4156-4393-985F-82D16094CAB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniEdupage", "MiniEdupage\MiniEdupage.csproj", "{ACE6B39A-D6DD-4069-A5FC-F755D9D02470}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -985,6 +987,18 @@ Global
 		{51FAD674-4156-4393-985F-82D16094CAB7}.Release|x64.Build.0 = Release|Any CPU
 		{51FAD674-4156-4393-985F-82D16094CAB7}.Release|x86.ActiveCfg = Release|Any CPU
 		{51FAD674-4156-4393-985F-82D16094CAB7}.Release|x86.Build.0 = Release|Any CPU
+		{ACE6B39A-D6DD-4069-A5FC-F755D9D02470}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACE6B39A-D6DD-4069-A5FC-F755D9D02470}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACE6B39A-D6DD-4069-A5FC-F755D9D02470}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{ACE6B39A-D6DD-4069-A5FC-F755D9D02470}.Debug|x64.Build.0 = Debug|Any CPU
+		{ACE6B39A-D6DD-4069-A5FC-F755D9D02470}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ACE6B39A-D6DD-4069-A5FC-F755D9D02470}.Debug|x86.Build.0 = Debug|Any CPU
+		{ACE6B39A-D6DD-4069-A5FC-F755D9D02470}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACE6B39A-D6DD-4069-A5FC-F755D9D02470}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACE6B39A-D6DD-4069-A5FC-F755D9D02470}.Release|x64.ActiveCfg = Release|Any CPU
+		{ACE6B39A-D6DD-4069-A5FC-F755D9D02470}.Release|x64.Build.0 = Release|Any CPU
+		{ACE6B39A-D6DD-4069-A5FC-F755D9D02470}.Release|x86.ActiveCfg = Release|Any CPU
+		{ACE6B39A-D6DD-4069-A5FC-F755D9D02470}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1060,6 +1074,7 @@ Global
 		{A8FAAFA0-DEC5-4B39-816C-55B72C7D871D} = {49743368-C60D-4EAA-8434-1430F79BFE87}
 		{49F98D70-F930-4216-A888-447D725875DE} = {49743368-C60D-4EAA-8434-1430F79BFE87}
 		{51FAD674-4156-4393-985F-82D16094CAB7} = {56555FB0-B513-49EF-9002-A5AF135EA090}
+		{ACE6B39A-D6DD-4069-A5FC-F755D9D02470} = {49743368-C60D-4EAA-8434-1430F79BFE87}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DA28B771-864A-4519-8BAA-28AE4E03BA3F}
