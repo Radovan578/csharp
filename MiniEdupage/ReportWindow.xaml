@@ -18,7 +18,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Meno žiaka" Binding="{Binding Name}" Width="*"/>
                 <DataGridTextColumn Header="Počet známok" Binding="{Binding PocetZnamok}" Width="100"/>
-                <DataGridTextColumn Header="Priemerná známka" Binding="{Binding PriemernaZnamka}" Width="120"/>
+
+                <DataGridTextColumn Header="Priemerná známka" Binding="{Binding PriemernaZnamka, StringFormat={}{0:0.00}}" Width="120"/>
             </DataGrid.Columns>
         </DataGrid>
 

@@ -1,6 +1,7 @@
 ﻿using System;
-using System.IO; // TOTO JE TEN SYSTEM IO. Vďaka nemu vie program ukladať a načítať dáta z disku!
+using System.IO;
 using System.Text;
+using System.Text.Json; // NOVÝ RIADOK: Knižnica, ktorá robí celú mágiu s JSON
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,7 +12,8 @@ namespace MiniEdupage
     {
         public static List<Ziak> ziaci = new List<Ziak>();
 
-        string nazovSuboru = "ziaci_data.txt";
+        // ZMENA: Zmenili sme koncovku súboru na .json, aby to bolo profesionálne
+        string nazovSuboru = "ziaci_data.json";
 
         public MainWindow()
         {
@@ -29,39 +31,34 @@ namespace MiniEdupage
         {
             string ziakName = AddZiakTextBox.Text;
 
-            if (ziakName != "")
+            if (ziakName != "" && ziakName != "Zadaj meno ziaka...")
             {
-                if (ziakName != "Zadaj meno ziaka...")
-                {
-                    Ziak newZiak = new Ziak();
-                    newZiak.Name = ziakName;
+                Ziak newZiak = new Ziak();
+                newZiak.Name = ziakName;
 
-                    ziaci.Add(newZiak);
+                ziaci.Add(newZiak);
 
-                    // Aktualizujeme zoznam na obrazovke
-                    ObnovZoznamNaObrazovke();
-                    AddZiakTextBox.Text = "Zadaj meno ziaka...";
-                }
+                // Aktualizujeme zoznam na obrazovke
+                ObnovZoznamNaObrazovke();
+                AddZiakTextBox.Text = "Zadaj meno ziaka...";
             }
         }
-        public void AddZiakTextBox_GotFocus(object sender, RoutedEventArgs e)
-{
-    // Ak je v poli stále pôvodný text, tak ho vymažeme, aby mohol používateľ rovno písať
-    if (AddZiakTextBox.Text == "Zadaj meno ziaka...")
-    {
-        AddZiakTextBox.Text = "";
-    }
-}
 
-// Táto funkcia sa spustí, keď KLIKNEŠ MIMO textového poľa
-public void AddZiakTextBox_LostFocus(object sender, RoutedEventArgs e)
-{
-    // Ak používateľ nič nenapísal a klikol preč, vrátime tam pôvodný text
-    if (AddZiakTextBox.Text == "")
-    {
-        AddZiakTextBox.Text = "Zadaj meno ziaka...";
-    }
-}
+        public void AddZiakTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (AddZiakTextBox.Text == "Zadaj meno ziaka...")
+            {
+                AddZiakTextBox.Text = "";
+            }
+        }
+
+        public void AddZiakTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (AddZiakTextBox.Text == "")
+            {
+                AddZiakTextBox.Text = "Zadaj meno ziaka...";
+            }
+        }
 
         public void ZiaciListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -122,7 +119,7 @@ public void AddZiakTextBox_LostFocus(object sender, RoutedEventArgs e)
 
             if (vybranyZiak != null)
             {
-                MenoZiadkaTextBlock.Text = vybranyZiak.Name;
+                MenoZiakaTextBlock.Text = vybranyZiak.Name;
                 PocetZnamokTextBlock.Text = vybranyZiak.PocetZnamok.ToString();
 
                 // Priemer na 2 desatinné miesta
@@ -145,7 +142,7 @@ public void AddZiakTextBox_LostFocus(object sender, RoutedEventArgs e)
             }
             else
             {
-                MenoZiadkaTextBlock.Text = "-";
+                MenoZiakaTextBlock.Text = "-";
                 ZnamkyTextBlock.Text = "-";
                 PocetZnamokTextBlock.Text = "0";
                 PriemerTextBlock.Text = "0.00";
@@ -159,93 +156,58 @@ public void AddZiakTextBox_LostFocus(object sender, RoutedEventArgs e)
             ZiaciListBox.ItemsSource = ziaci;
         }
 
-        // Tlačidlo na uloženie dát do textového súboru
+        // PREROBENÉ NA JSON: Tlačidlo na uloženie dát
         public void UlozitData_Click(object sender, RoutedEventArgs e)
         {
-            List<string> riadkyNaUlozenie = new List<string>();
+            // 1. Zoberieme celý náš List<Ziak> a premeníme ho na jeden veľký JSON text
+            string jsonText = JsonSerializer.Serialize(ziaci);
 
-            foreach (Ziak z in ziaci)
+            // 2. Tento jeden text rovno zapíšeme do súboru
+            File.WriteAllText(nazovSuboru, jsonText);
+
+            // Ak to nevolalo mazanie žiaka (čiže sender nie je null), ukážeme hlášku
+            if (sender != null)
             {
-                // Najprv vyrobíme text zo známok (napríklad "1,2,5")
-                string znamkyText = "";
-                foreach (int znamka in z.Znamky)
-                {
-                    if (znamkyText == "")
-                    {
-                        znamkyText = znamka.ToString();
-                    }
-                    else
-                    {
-                        znamkyText = znamkyText + "," + znamka.ToString();
-                    }
-                }
-
-                // Spojíme meno a známky pomocou bodkočiarky: "Janko Novák;1,2,5"
-                string riadok = z.Name + ";" + znamkyText;
-                riadkyNaUlozenie.Add(riadok);
+                MessageBox.Show("Dáta boli úspešne uložené do JSON súboru!");
             }
-
-            File.WriteAllLines(nazovSuboru, riadkyNaUlozenie);
-            MessageBox.Show("Dáta boli úspešne uložené!");
         }
 
-        // Funkcia, ktorá hneď pri zapnutí načíta textový súbor
+        // PREROBENÉ NA JSON: Funkcia, ktorá hneď pri zapnutí načíta dáta
         public void NacitatDataZoSuboru()
         {
             if (File.Exists(nazovSuboru))
             {
-                string[] riadky = File.ReadAllLines(nazovSuboru);
-                ziaci.Clear();
+                // 1. Prečítame celý JSON text zo súboru
+                string jsonText = File.ReadAllText(nazovSuboru);
 
-                foreach (string riadok in riadky)
+                // 2. Povieme C#, nech ten text premení späť na List<Ziak>
+                List<Ziak> nacitaniZiaci = JsonSerializer.Deserialize<List<Ziak>>(jsonText);
+
+                if (nacitaniZiaci != null)
                 {
-                    string[] casti = riadok.Split(';');
-                    if (casti.Length >= 2)
-                    {
-                        Ziak z = new Ziak();
-                        z.Name = casti[0];
-
-                        string znamkyText = casti[1];
-                        if (znamkyText != "")
-                        {
-                            string[] cislaZnamok = znamkyText.Split(',');
-                            foreach (string cislo in cislaZnamok)
-                            {
-                                int oplatka = int.Parse(cislo);
-                                z.Znamky.Add(oplatka);
-                            }
-                        }
-
-                        // Prepočítame načítanému žiakovi štatistiky
-                        PrepocitajZiakoviStatistiky(z);
-                        ziaci.Add(z);
-                    }
+                    ziaci = nacitaniZiaci;
                 }
+
+                // Obnovíme zoznam na obrazovke
                 ObnovZoznamNaObrazovke();
             }
         }
+
         public void OdstranitZiakButton_Click(object sender, RoutedEventArgs e)
         {
-            // 1. Zistíme, ktorý žiak je práve označený v zozname
             Ziak vybranyZiak = (Ziak)ZiaciListBox.SelectedItem;
 
-            // 2. Skontrolujeme, či používateľ naozaj nejakého žiaka vybral
             if (vybranyZiak != null)
             {
-                // 3. Odstránime ho z nášho hlavného zoznamu v pamäti
                 ziaci.Remove(vybranyZiak);
-
-                // 4. Aktualizujeme zoznam na obrazovke, aby odtiaľ žiak zmizol
                 ObnovZoznamNaObrazovke();
-
-                // 5. Vyčistíme pravý panel s detailmi, keďže daný žiak už neexistuje
                 UkazDetailVybranehoZiaka();
 
+                // Tu voláme tvoje skvelé vylepšenie, ktoré uloží zmeny aj po zmazaní
                 UlozitData_Click(null, null);
             }
             else
             {
-                // Ak klikne na tlačidlo a nemá vybraného žiadneho žiaka, upozorníme ho
                 MessageBox.Show("Najprv kliknutím vyber žiaka zo zoznamu, ktorého chceš odstrániť.");
             }
         }

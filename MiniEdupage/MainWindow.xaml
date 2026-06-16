@@ -13,7 +13,7 @@
         <TextBlock Text="Zoznam žiakov" HorizontalAlignment="Left" Margin="58,110,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <ListBox Name="ZiaciListBox" Margin="58,135,530,90" SelectionChanged="ZiaciListBox_SelectionChanged" DisplayMemberPath="Name"/>
         <Label Content="Meno žiaka:" HorizontalAlignment="Left" Margin="310,135,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBlock Name="MenoZiadkaTextBlock" HorizontalAlignment="Left" Margin="400,140,0,0" VerticalAlignment="Top" Text="-"/>
+        <TextBlock Name="MenoZiakaTextBlock" HorizontalAlignment="Left" Margin="400,140,0,0" VerticalAlignment="Top" Text="-"/>
 
         <Label Content="Pridať známku:" HorizontalAlignment="Left" Margin="310,175,0,0" VerticalAlignment="Top"/>
         <ComboBox Name="ZnamkaComboBox" HorizontalAlignment="Left" Margin="410,178,0,0" VerticalAlignment="Top" Width="50">
