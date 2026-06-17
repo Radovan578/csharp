@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 
 namespace MiniEdupage
@@ -13,40 +14,36 @@ namespace MiniEdupage
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            // Vytvoríme si kópiu zoznamu z hlavného okna
+            // 1. Vytvoríme si kópiu zoznamu z hlavného okna
             List<Ziak> kopiaZoznamu = new List<Ziak>(MainWindow.ziaci);
 
-            // JEDNODUCHÉ ZORADENIE (Bubble Sort)
-            // Porovnáva dvoch žiakov vedľa seba a ak má ten vpravo lepší priemer, vymení ich pozície
-            for (int i = 0; i < kopiaZoznamu.Count - 1; i++)
+            // 2. OŠETRENIE NULOVÝCH PRIEMEROV cez klasický foreach a if
+            // Prejdeme všetkých žiakov a ak niekto nemá známky (priemer je 0),
+            // dáme mu fiktívny priemer 6, aby v zozname nesvietil na prvom mieste
+            foreach (Ziak z in kopiaZoznamu)
             {
-                for (int j = 0; j < kopiaZoznamu.Count - 1 - i; j++)
+                if (z.PriemernaZnamka == 0)
                 {
-                    double priemer1 = kopiaZoznamu[j].PriemernaZnamka;
-                    double priemer2 = kopiaZoznamu[j + 1].PriemernaZnamka;
-
-                    // Ak žiak nemá známku (priemer 0), dáme mu fiktívne číslo 6, aby skončil na konci zoznamu
-                    if (priemer1 == 0)
-                    {
-                        priemer1 = 6;
-                    }
-                    if (priemer2 == 0)
-                    {
-                        priemer2 = 6;
-                    }
-
-                    // Chceme zoradiť od najmenšieho (1.00 je najlepší priemer)
-                    if (priemer1 > priemer2)
-                    {
-                        Ziak docasny = kopiaZoznamu[j];
-                        kopiaZoznamu[j] = kopiaZoznamu[j + 1];
-                        kopiaZoznamu[j + 1] = docasny;
-                    }
+                    z.PriemernaZnamka = 6;
                 }
             }
 
-            // Priradíme utriedený zoznam do tabuľky
-            ReportDataGrid.ItemsSource = kopiaZoznamu;
+            // 3. JEDNODUCHÉ ZORADENIE
+            // Teraz, keď sú nuly opravené na šestky, stačí zoznam zoradiť vzostupne od 1 po 6
+            List<Ziak> zoradenyZoznam = kopiaZoznamu.OrderBy(z => z.PriemernaZnamka).ToList();
+
+            // 4. VRÁTENIE HODNÔT SPÄŤ NA NULU
+            // Aby v tabuľke žiakom nesvietil priemer 6.00 (čo je blbosť), prepíšeme tie šestky späť na 0
+            foreach (Ziak z in zoradenyZoznam)
+            {
+                if (z.PriemernaZnamka == 6)
+                {
+                    z.PriemernaZnamka = 0;
+                }
+            }
+
+            // 5. Priradíme kompletne pripravený zoznam do tabuľky na obrazovke
+            ReportDataGrid.ItemsSource = zoradenyZoznam;
         }
 
         private void Zavriet_Click(object sender, RoutedEventArgs e)
