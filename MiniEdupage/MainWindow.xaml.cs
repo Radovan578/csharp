@@ -98,12 +98,8 @@ namespace MiniEdupage
 
             if (pocet > 0)
             {
-                double sucet = 0;
-                foreach (int znamka in ziak.Znamky)
-                {
-                    sucet = sucet + znamka;
-                }
-                double priemer = sucet / pocet;
+                double priemer = ziak.Znamky.Average();
+
                 ziak.PriemernaZnamka = Math.Round(priemer, 2);
             }
             else

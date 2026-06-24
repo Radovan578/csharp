@@ -46,5 +46,6 @@
         Foreground="White" 
         FontWeight="Bold" 
         Click="OdstranitZiakButton_Click"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="-52,-40,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
